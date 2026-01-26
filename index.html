@@ -1,141 +1,200 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portofolio IRINA</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/logos.png">
-</head>
-<body>
-<p>Irina</p>    
-</head>
-<div> class="Irina">my<span>porto</span></div>
-<body>
-    <li><a href="home">home</a>/li>
-    <li><a href="about">about</a>li>
-    <li><a href="proyek">proyek</a>li>
-    <li><a href="medsod">medsos</a>li>
-    
- <!--Bagian Home-->
-    <section id="home" class="hero">
-     <div class="hero-content">
-        <p>Hi, Welcome to My Website</p>
-        <h1>Adeveloper</h1>
-        <p>
-            Website ini merupakan portofolio saya yang merupakan deskripsi
-            singkat tentang saya
-            </p>
-            <a href="#about" class="btn-hero">About Me</a>
-            </div> 
-            <div class="hero-logo">
-                <img src="img/mylogo.png" alt="Adeveloper" />
-                </div>
-                </section>
- <!--Bagian About-->
- <!-- Bagian About -->
-<section id="about" class="container about">
-  <h2>About Me</h2>
-  <div class="about-content">
-    <p>
-      Nama saya <strong>Niken Triwulandari</strong>, berasal dari <strong>Surabaya</strong>, dan merupakan siswa dari SMA IPIEMS 
-      <strong>Jurusan IPA</strong>saya memiliki minat di bidang kesehatan, saya juga terbiasa bekerja dalam tim dan 
-      beradaptasi dengan lingkungan baru, khususnya dalam konteks kerja lintas disiplin antara teknologi dan kesehatan.<strong>saya menyukai <strong>menonton drakor, memasak, mewarnai, membaca buku</strong> sebagai
-      sarana menjaga keseimbangan aktivitas.
-    </p>
-    <p>
-      Ke depan, saya ingin terus berkembang dan memanfaatkan teknologi secara positif serta bermanfaat.
-    </p>
-  </div>
-</section>
+/* --- 1. Reset Dasar --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Menghitung padding & border ke dalam lebar total elemen */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font bersih & modern */
+    scroll-behavior: smooth; /* Efek scroll halus saat klik menu navigasi */
+}
 
-<!-- Bagian Proyek -->
-<section id="proyek" class="container bg-light proyek">
-  <h2>Proyek Saya</h2>
-  <div class="proyek-grid">
-    <a href="#" target="_blank" class="proyek-card">
-      <img src="img/project.png" alt="ExcelProject" />
-      <div class="proyek-info">
-        <h3>Excel</h3>
-        <p>My Excel Project</p>
-      </div>
-    </a>
+body {
+    background-color: #fff5f7; /* Warna latar belakang pink sangat muda */
+    color: #444; /* Warna teks abu gelap agar nyaman dibaca */
+    line-height: 1.6;
+}
 
-    <a href="#" target="_blank" class="proyek-card">
-      <img src="img/project.png" alt="ArduinoLed" />
-      <div class="proyek-info">
-        <h3>ArduinoLED</h3>
-        <p>Arduino LED Control Project</p>
-      </div>
-    </a>
+/* --- 2. Navigasi --- */
+nav {
+    display: flex;
+    justify-content: space-between; /* Nama di kiri, menu di kanan */
+    align-items: center;
+    padding: 20px 10%;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Bayangan tipis agar terlihat elegan */
+    position: sticky; /* Tetap di atas saat di-scroll */
+    top: 0;
+    z-index: 1000;
+}
 
-    <a href="#" target="_blank" class="proyek-card">
-      <img src="img/project.png" alt="ArduinoLyric" />
-      <div class="proyek-info">
-        <h3>Arduino Lirik</h3>
-        <p>Arduino Lyric Display Project</p>
-      </div>
-    </a>
+.Irina {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff85a2; /* Pink utama */
+}
 
-    <a href="#" target="_blank" class="proyek-card">
-      <img src="img/project.png" alt="Flowchart Project" />
-      <div class="proyek-info">
-        <h3>Flowchart</h3>
-        <p>My Flowchart Project</p>
-      </div>
-    </a>
+.Irina span {
+    color: #ffb3c6; /* Pink lebih muda untuk variasi */
+}
 
-    <a href="#" target="_blank" class="proyek-card">
-      <img src="img/project.png" alt="Website Project" />
-      <div class="proyek-info">
-        <h3>Website Sederhana</h3>
-        <p>My Website Project</p>
-      </div>
-    </a>
+.nav-links {
+    display: flex;
+    list-style: none;
+}
 
-    <a href="#" target="_blank" class="proyek-card">
-      <img src="img/project.png" alt="PSAJ Project" />
-      <div class="proyek-info">
-        <h3>Website PSAJ</h3>
-        <p>Website PSAJ Non Tulis</p>
-      </div>
-    </a>
-  </div>
-</section>
-<!-- Bagian Medsos -->
-<section id="medsos" class="container medsos">
-  <h2>Media Sosial</h2>
-  <div class="medsos-list">
-    <a href="https://github.com/username" target="_blank" class="medsos-item">
-      <img src="img/gbr_github.png" alt="GitHub" />
-      <span>Github</span>
-    </a>
+.nav-links li {
+    margin-left: 25px;
+}
 
-    <a href="https://instagram.com/username" target="_blank" class="medsos-item">
-      <img src="img/gbr_ig.png" alt="Instagram" />
-      <span>Instagram</span>
-    </a>
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.3s; /* Efek transisi warna saat hover */
+}
 
-    <a href="https://tiktok.com/username" target="_blank" class="medsos-item">
-      <img src="img/gbr_tiktok.png" alt="Tiktok" />
-       <span>TikTok</span>
-    </a>
+.nav-links a:hover {
+    color: #ff85a2; /* Berubah jadi pink saat disentuh mouse */
+}
 
-    <a href="https://linkedin.com/in/username" target="_blank" class="medsos-item">
-      <img src="img/gbr_linkedin.png" alt="LinkedIn" />
-      <span>LinkedIn</span>
-    </a>
-  </div>
-</section>
-<!-- Bagian Footer -->
-<footer>
-  <p>© 2026 AdeveloperProject</p>
-</footer>
-</body>
-</html>
+/* --- 3. Hero Section --- */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    background: linear-gradient(135deg, #fff 50%, #ffeef2 50%); /* Background dua warna diagonal */
+}
 
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #ff85a2;
+    margin-bottom: 10px;
+}
 
-</body>
-</html>
-</body>
-</html>
+.btn-hero {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #ff85a2;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px; /* Membuat tombol lonjong/rounded */
+    transition: transform 0.3s;
+}
+
+.btn-hero:hover {
+    transform: translateY(-5px); /* Efek tombol naik sedikit saat hover */
+    background-color: #ffb3c6;
+}
+
+.hero-logo img {
+    width: 350px;
+    border-radius: 50%; /* Membuat foto profil bulat */
+    border: 8px solid #ffffff;
+}
+
+/* --- 4. Section Container General --- */
+.container {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff85a2;
+    position: relative;
+}
+
+/* Garis bawah dekorasi di bawah judul */
+h2::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #ffb3c6;
+    display: block;
+    margin: 10px auto;
+}
+
+/* --- 5. About Section --- */
+.about {
+    background-color: #ffffff;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* --- 6. Proyek (Grid System) --- */
+.proyek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif: otomatis menyesuaikan jumlah kolom */
+    gap: 25px; /* Jarak antar kartu */
+}
+
+.proyek-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden; /* Agar gambar tidak keluar dari border-radius */
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.proyek-card:hover {
+    transform: scale(1.03); /* Membesar sedikit saat di-hover */
+}
+
+.proyek-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Gambar tetap proporsional meski di-resize */
+}
+
+.proyek-info {
+    padding: 20px;
+}
+
+.proyek-info h3 {
+    color: #ff85a2;
+    margin-bottom: 5px;
+}
+
+/* --- 7. Media Sosial --- */
+.medsos-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.medsos-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #555;
+}
+
+.medsos-item img {
+    width: 50px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.medsos-item:hover img {
+    transform: rotate(360deg); /* Animasi berputar saat hover */
+}
+
+/* --- 8. Footer --- */
+footer {
+    background: #ff85a2;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
