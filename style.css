@@ -1,0 +1,200 @@
+/* --- 1. Reset Dasar --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Menghitung padding & border ke dalam lebar total elemen */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font bersih & modern */
+    scroll-behavior: smooth; /* Efek scroll halus saat klik menu navigasi */
+}
+
+body {
+    background-color: #fff5f7; /* Warna latar belakang pink sangat muda */
+    color: #444; /* Warna teks abu gelap agar nyaman dibaca */
+    line-height: 1.6;
+}
+
+/* --- 2. Navigasi --- */
+nav {
+    display: flex;
+    justify-content: space-between; /* Nama di kiri, menu di kanan */
+    align-items: center;
+    padding: 20px 10%;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Bayangan tipis agar terlihat elegan */
+    position: sticky; /* Tetap di atas saat di-scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+.Irina {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff85a2; /* Pink utama */
+}
+
+.Irina span {
+    color: #ffb3c6; /* Pink lebih muda untuk variasi */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.3s; /* Efek transisi warna saat hover */
+}
+
+.nav-links a:hover {
+    color: #ff85a2; /* Berubah jadi pink saat disentuh mouse */
+}
+
+/* --- 3. Hero Section --- */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    background: linear-gradient(135deg, #fff 50%, #ffeef2 50%); /* Background dua warna diagonal */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #ff85a2;
+    margin-bottom: 10px;
+}
+
+.btn-hero {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #ff85a2;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px; /* Membuat tombol lonjong/rounded */
+    transition: transform 0.3s;
+}
+
+.btn-hero:hover {
+    transform: translateY(-5px); /* Efek tombol naik sedikit saat hover */
+    background-color: #ffb3c6;
+}
+
+.hero-logo img {
+    width: 350px;
+    border-radius: 50%; /* Membuat foto profil bulat */
+    border: 8px solid #ffffff;
+}
+
+/* --- 4. Section Container General --- */
+.container {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff85a2;
+    position: relative;
+}
+
+/* Garis bawah dekorasi di bawah judul */
+h2::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #ffb3c6;
+    display: block;
+    margin: 10px auto;
+}
+
+/* --- 5. About Section --- */
+.about {
+    background-color: #ffffff;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* --- 6. Proyek (Grid System) --- */
+.proyek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif: otomatis menyesuaikan jumlah kolom */
+    gap: 25px; /* Jarak antar kartu */
+}
+
+.proyek-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden; /* Agar gambar tidak keluar dari border-radius */
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.proyek-card:hover {
+    transform: scale(1.03); /* Membesar sedikit saat di-hover */
+}
+
+.proyek-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Gambar tetap proporsional meski di-resize */
+}
+
+.proyek-info {
+    padding: 20px;
+}
+
+.proyek-info h3 {
+    color: #ff85a2;
+    margin-bottom: 5px;
+}
+
+/* --- 7. Media Sosial --- */
+.medsos-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.medsos-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #555;
+}
+
+.medsos-item img {
+    width: 50px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.medsos-item:hover img {
+    transform: rotate(360deg); /* Animasi berputar saat hover */
+}
+
+/* --- 8. Footer --- */
+footer {
+    background: #ff85a2;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
