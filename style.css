@@ -1,185 +1,182 @@
-/* Reset dasar agar margin dan padding bawaan browser hilang */
+/* --- 1. RESET & DASAR --- */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Menghitung padding dalam total lebar elemen */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern tanpa kaki */
+    box-sizing: border-box; /* Menghitung padding agar tidak merusak lebar elemen */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Font yang bersih dan mudah dibaca */
 }
 
-/* Mengatur scroll halus saat link navigasi diklik */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Efek scroll halus saat klik menu navigasi */
 }
 
 body {
-    background-color: #fff5f8; /* Warna pink sangat pucat untuk latar belakang web */
-    color: #444; /* Warna teks utama */
-    line-height: 1.6; /* Memberi ruang antar baris teks agar enak dibaca */
+    background-color: #ffffff; /* Warna dasar putih bersih */
+    color: #333333; /* Warna teks abu gelap agar tidak terlalu tajam */
+    line-height: 1.6; /* Memberi jarak antar baris teks */
 }
 
-/* --- NAVIGASI --- */
+/* --- 2. NAVIGASI --- */
 header {
     background-color: #ffffff;
-    padding: 1rem 10%;
-    position: fixed; /* Navigasi tetap di atas saat di-scroll */
+    padding: 15px 10%;
+    position: fixed; /* Navigasi tetap di atas saat layar di-scroll */
     width: 100%;
     top: 0;
-    z-index: 1000; /* Memastikan nav berada di paling depan */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Bayangan halus di bawah nav */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Bayangan tipis agar nav terlihat elegan */
 }
 
 nav {
     display: flex;
-    justify-content: space-between; /* Logo di kiri, menu di kanan */
+    justify-content: space-between; /* Logo di kiri, Menu di kanan */
     align-items: center;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #f06292; /* Warna pink utama */
+    color: #333;
 }
 
 .logo span {
-    color: #444; /* Warna kontras untuk kata 'Porto' */
+    color: #f48fb1; /* Warna pink pastel untuk aksen 'Porto' */
 }
 
 nav ul {
     display: flex;
-    list-style: none; /* Menghilangkan titik list */
+    list-style: none; /* Menghilangkan titik-titik pada list */
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin-left: 30px;
 }
 
 nav ul li a {
     text-decoration: none; /* Menghilangkan garis bawah link */
-    color: #666;
-    font-weight: 500;
-    transition: 0.3s; /* Efek halus saat kursor menyentuh link */
+    color: #555;
+    font-size: 1rem;
+    transition: 0.3s; /* Efek transisi warna saat kursor menyentuh menu */
 }
 
 nav ul li a:hover {
-    color: #f06292; /* Berubah warna saat di-hover */
+    color: #f48fb1; /* Berubah jadi pink lembut saat di-hover */
 }
 
-/* --- HERO SECTION --- */
+/* --- 3. HERO SECTION --- */
 .hero {
-    height: 100vh; /* Memenuhi satu layar laptop */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10%;
-    background: linear-gradient(135deg, #ffffff 0%, #fce4ec 100%); /* Gradasi putih ke pink */
-    margin-top: 60px; /* Memberi ruang karena nav-nya fixed */
+    background-color: #fff9fb; /* Pink sangat pudar agar area hero lebih fokus */
+    margin-top: 50px;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    color: #f06292;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #333;
 }
 
 .hero-content p {
     font-size: 1.1rem;
+    color: #666;
     margin-bottom: 25px;
     max-width: 500px;
 }
 
 .btn-hero {
     display: inline-block;
-    padding: 12px 30px;
-    background-color: #f06292;
+    padding: 12px 25px;
+    background-color: #f48fb1;
     color: white;
     text-decoration: none;
-    border-radius: 25px; /* Membuat tombol lonjong/rounded */
+    border-radius: 8px;
     transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(240, 98, 146, 0.3);
 }
 
 .btn-hero:hover {
-    background-color: #ec407a;
-    transform: translateY(-3px); /* Tombol sedikit naik saat di-hover */
+    background-color: #f06292; /* Pink sedikit lebih gelap saat diklik */
+    transform: translateY(-2px); /* Efek melayang sedikit */
 }
 
 .hero-logo img {
-    width: 350px; /* Ukuran foto profil kamu */
-    border-radius: 50%; /* Membuat foto jadi bulat */
-    border: 8px solid white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 320px;
+    border-radius: 20px; /* Sudut gambar agak membulat agar lebih modern */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-/* --- CONTAINER UMUM --- */
+/* --- 4. ABOUT SECTION --- */
 .container {
     padding: 80px 10%;
+}
+
+.about {
+    background-color: #ffffff;
     text-align: center;
 }
 
 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    font-size: 2rem;
+    margin-bottom: 30px;
     position: relative;
-    display: inline-block;
+    padding-bottom: 10px;
 }
 
-/* Garis bawah dekorasi di setiap judul section */
 h2::after {
     content: '';
-    width: 50%;
-    height: 4px;
-    background: #f06292;
+    width: 50px;
+    height: 3px;
+    background-color: #f48fb1;
     position: absolute;
-    bottom: -10px;
-    left: 25%;
-    border-radius: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Garis bawah kecil di bawah judul */
 }
 
-/* --- ABOUT --- */
 .about-content {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
-    text-align: justify; /* Teks rata kanan-kiri */
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    text-align: left; /* Teks deskripsi rata kiri agar nyaman dibaca */
 }
 
 .about-content p {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-/* --- PROYEK (GRID) --- */
+/* --- 5. PROYEK (GRID) --- */
 .bg-light {
-    background-color: #ffffff;
+    background-color: #fff9fb; /* Warna latar belakang area proyek */
 }
 
 .proyek-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Membuat kartu sejajar otomatis */
-    gap: 25px; /* Jarak antar kartu */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid otomatis sejajar & responsif */
+    gap: 25px; /* Jarak antar kartu proyek */
+    margin-top: 30px;
 }
 
 .proyek-card {
-    background: #fff;
-    border-radius: 15px;
-    overflow: hidden; /* Gambar tidak keluar dari sudut rounded */
+    background: white;
+    border-radius: 12px;
     text-decoration: none;
     color: inherit;
-    border: 1px solid #fce4ec;
+    overflow: hidden;
     transition: 0.3s;
+    border: 1px solid #fce4ec; /* Frame tipis pink pudar */
 }
 
 .proyek-card:hover {
-    transform: scale(1.03); /* Membesar sedikit saat di-hover */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: scale(1.02); /* Sedikit membesar saat kursor di atas kartu */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .proyek-card img {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* Gambar tetap proporsional */
+    object-fit: cover; /* Gambar dipotong rapi agar seragam */
 }
 
 .proyek-info {
@@ -187,16 +184,17 @@ h2::after {
 }
 
 .proyek-info h3 {
-    color: #f06292;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: #f48fb1;
+    margin-bottom: 8px;
 }
 
-/* --- MEDSOS --- */
+/* --- 6. MEDIA SOSIAL --- */
 .medsos-list {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
 }
 
 .medsos-item {
@@ -204,25 +202,27 @@ h2::after {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #666;
+    color: #555;
     transition: 0.3s;
 }
 
 .medsos-item img {
-    width: 50px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 10px;
 }
 
 .medsos-item:hover {
-    color: #f06292;
+    color: #f48fb1;
     transform: translateY(-5px);
 }
 
-/* --- FOOTER --- */
+/* --- 7. FOOTER --- */
 footer {
-    background-color: #f06292;
-    color: white;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
+    padding: 40px 0;
+    background-color: #ffffff;
+    border-top: 1px solid #fce4ec;
+    font-size: 0.9rem;
+    color: #888;
 }
