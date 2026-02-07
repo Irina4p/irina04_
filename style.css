@@ -1,186 +1,54 @@
-/* --- 1. Dasar & Variabel --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+/* --- Dekorasi Tulip Niken (Besar & Muncul) --- */
+.hiasan-tulip {
+    position: fixed; /* Tetap di layar walau di-scroll */
+    font-size: 5rem; /* Ukurannya tanggung, besar dan kelihatan */
+    z-index: 9999;   /* Memastikan paling depan agar tidak hilang */
+    pointer-events: none; /* Tidak mengganggu klik mouse */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Glow putih */
+    animation: gerakTulip 4s infinite ease-in-out;
 }
 
-:root {
-    --pink-tulip: #ffb1c1; /* Pink Tulip Pastel */
-    --pink-soft: #ffe5ec;  /* Latar belakang sangat lembut */
-    --white-glow: #ffffff;
-    --text-color: #5d4037; /* Cokelat tua lembut agar estetik */
-}
+.tulip-1 { top: 10%; left: 2%; }
+.tulip-2 { bottom: 10%; right: 2%; transform: rotate(15deg); }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #fff;
-    color: var(--text-color);
-    overflow-x: hidden;
-    position: relative;
-}
-
-/* --- 2. Navigasi --- */
-header {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
-    padding: 20px 10%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(255, 177, 193, 0.1);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--pink-tulip);
-}
-
-.logo span { color: var(--text-color); }
-
-nav ul { display: flex; list-style: none; }
-
-nav ul li { margin-left: 25px; }
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-nav ul li a:hover { color: var(--pink-tulip); }
-
-/* --- 3. Hero Section --- */
-.hero {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10%;
-    background: linear-gradient(180deg, #fff 0%, var(--pink-soft) 100%);
-    position: relative;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    color: var(--pink-tulip);
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 0px white;
-}
-
-.btn-hero {
-    display: inline-block;
-    padding: 12px 30px;
-    background: var(--pink-tulip);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    margin-top: 20px;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(255, 177, 193, 0.4);
-}
-
-.hero-logo img {
-    width: 300px;
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%; /* Bentuk kelopak bunga */
-    border: 10px solid white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* --- 4. Dekorasi BUNGA TULIP (Ukuran Tanggung & Cantik) --- */
-.ornamen-tulip {
+/* --- Dekorasi Melodi Kartun --- */
+.hiasan-melodi {
     position: fixed;
-    font-size: 4rem; /* Ukuran pas agar terlihat jelas tulipnya */
-    z-index: 99;
-    pointer-events: none;
-    filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));
-    animation: float 5s infinite ease-in-out;
+    font-size: 3rem;
+    color: #ffb1c1; /* Pink Pastel */
+    z-index: 9998;
+    opacity: 0.7;
+    animation: gerakMelodi 5s infinite linear;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(10deg); }
-}
+.melodi-1 { top: 30%; right: 5%; }
+.melodi-2 { bottom: 30%; left: 5%; }
 
-/* --- 5. Dekorasi MELODI KARTUN --- */
-.ornamen-melodi {
+/* --- Bintang Pink Glow Putih --- */
+.bintang-niken {
     position: fixed;
-    font-size: 2.5rem;
-    color: var(--pink-tulip);
-    opacity: 0.6;
-    z-index: 98;
-    animation: dance 4s infinite ease-in-out;
-}
-
-@keyframes dance {
-    0% { transform: scale(1) rotate(0); }
-    50% { transform: scale(1.2) rotate(-15deg); }
-    100% { transform: scale(1) rotate(0); }
-}
-
-/* --- 6. BINTANG PINK CAHAYA PUTIH --- */
-.star {
-    position: fixed;
-    width: 8px;
-    height: 8px;
-    background: var(--white-glow); /* Inti putih */
+    width: 10px;
+    height: 10px;
+    background: white; /* Inti cahaya putih */
     border-radius: 50%;
-    box-shadow: 0 0 12px 4px var(--pink-tulip); /* Pendaran pink */
-    z-index: 97;
-    animation: twinkle 3s infinite alternate;
+    box-shadow: 0 0 15px 5px #ffcad4; /* Pendaran pink muda */
+    z-index: 9997;
+    animation: kedip 2s infinite alternate;
 }
 
-@keyframes twinkle {
-    from { opacity: 0.3; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1.5); }
+/* --- Keyframes Animasi --- */
+@keyframes gerakTulip {
+    0%, 100% { transform: scale(1) rotate(0); }
+    50% { transform: scale(1.1) rotate(10deg); }
 }
 
-/* --- 7. Grid Proyek (Sejajar & Rapi) --- */
-.proyek-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 50px 10%;
+@keyframes gerakMelodi {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
 }
 
-.proyek-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid var(--pink-soft);
-    transition: 0.4s;
-}
-
-.proyek-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 40px rgba(255, 177, 193, 0.2);
-}
-
-.proyek-info {
-    padding: 20px;
-    text-align: center;
-}
-
-/* --- 8. Footer --- */
-footer {
-    text-align: center;
-    padding: 50px;
-    background: var(--pink-soft);
-    color: var(--text-color);
-    margin-top: 100px;
-    border-radius: 50px 50px 0 0;
+@keyframes kedip {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
 }
