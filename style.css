@@ -1,247 +1,81 @@
-/* --- 1. Reset & Global Styles --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-:root {
-    --pink-pastel: #fce4ec; /* Pink sangat muda */
-    --pink-tulip: #ffb1c1;  /* Pink khas bunga tulip */
-    --pink-accent: #f8bbd0; /* Aksen melodi/bintang */
-    --text-color: #5d4037;  /* Cokelat tua lembut (lebih soft dari hitam) */
-    --white: #ffffff;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--white);
-    color: var(--text-color);
-    line-height: 1.6;
-    overflow-x: hidden;
-    /* Background halus seperti kelopak bunga */
-    background: radial-gradient(circle at top right, var(--pink-pastel), transparent),
-                radial-gradient(circle at bottom left, var(--pink-pastel), transparent);
-}
-
-/* --- 2. Navigasi (Glassmorphism Style) --- */
-header {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px); /* Efek kaca transparan */
-    padding: 15px 10%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 15px rgba(252, 228, 236, 0.5);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--pink-tulip);
-}
-
-.logo span {
-    color: var(--text-color);
-    font-weight: 300;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 0.95rem;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--pink-tulip);
-    letter-spacing: 1px; /* Animasi teks melebar dikit */
-}
-
-/* --- 3. Hero Section --- */
-.hero {
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10%;
-    background: linear-gradient(180deg, var(--white) 0%, var(--pink-pastel) 100%);
-}
-
-.hero-content h1 {
+/* --- 1. Ornamen Bunga Tulip Dinamis --- */
+/* Menambahkan bunga di pojok kiri atas halaman */
+body::before {
+    content: '🌷';
+    position: fixed;
+    top: 10%;
+    left: 3%;
     font-size: 3rem;
-    color: var(--pink-tulip);
-    margin: 10px 0;
+    opacity: 0.3; /* Transparan agar tidak menutupi teks */
+    z-index: -1;
+    filter: drop-shadow(0 0 10px white);
 }
 
-.btn-hero {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--pink-tulip);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    margin-top: 20px;
-    transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(255, 177, 193, 0.4);
+/* Menambahkan bunga di pojok kanan bawah halaman */
+body::after {
+    content: '🌷';
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    font-size: 3.5rem;
+    opacity: 0.3;
+    z-index: -1;
+    transform: rotate(15deg);
 }
 
-.btn-hero:hover {
-    transform: scale(1.05);
-    background-color: var(--pink-accent);
-}
-
-.hero-logo img {
-    width: 320px;
-    border-radius: 50% 20% 50% 20%; /* Bentuk abstrak seperti kelopak */
-    border: 8px solid white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-/* --- 4. Section Container --- */
-.container {
-    padding: 80px 10%;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 50px;
+/* --- 2. Karakter Melodi yang Mengapung --- */
+/* Melodi 1 */
+.hero::before {
+    content: '♫';
+    position: absolute;
+    top: 20%;
+    right: 15%;
     font-size: 2rem;
-    color: var(--pink-tulip);
-    position: relative;
+    color: #ffb1c1;
+    animation: float-music 5s infinite ease-in-out;
+    opacity: 0.6;
 }
 
-/* Dekorasi Not Balok Kecil di bawah judul */
-h2::after {
+/* Melodi 2 */
+.about::after {
     content: '♪';
-    font-size: 1.2rem;
-    display: block;
-    margin-top: 10px;
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    font-size: 2.5rem;
+    color: #ffb1c1;
+    animation: float-music 7s infinite ease-in-out reverse;
     opacity: 0.5;
 }
 
-/* --- 5. Proyek (Grid) --- */
-.proyek-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.proyek-card {
-    background: white;
-    text-decoration: none;
-    color: inherit;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: 0.4s;
-    border: 1px solid var(--pink-pastel);
-}
-
-.proyek-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(255, 177, 193, 0.2);
-}
-
-.proyek-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.proyek-info {
-    padding: 20px;
-    text-align: center;
-}
-
-/* --- 6. Media Sosial --- */
-.medsos-list {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.medsos-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: 0.3s;
-}
-
-.medsos-item img {
-    width: 45px;
-    margin-bottom: 10px;
-    filter: sepia(20%) hue-rotate(310deg); /* Membuat logo sosmed agak kemerahan pastel */
-}
-
-.medsos-item:hover {
-    transform: translateY(-5px);
-    color: var(--pink-tulip);
-}
-
-/* --- 7. Animasi Bintang & Melodi (Efek Soft) --- */
-body::before {
-    content: '★';
+/* --- 3. Bintang Pink dengan Cahaya Putih --- */
+/* Kita gunakan box-shadow untuk menciptakan efek cahaya putih di tengah */
+.star-glow {
     position: fixed;
-    top: 20%;
-    left: 10%;
-    color: var(--pink-accent);
-    text-shadow: 0 0 10px white;
-    animation: floating 6s infinite ease-in-out;
-    opacity: 0.4;
+    width: 6px;
+    height: 6px;
+    background-color: white; /* Inti cahaya putih */
+    border-radius: 50%;
+    box-shadow: 0 0 12px 4px #ffcad4; /* Pendaran pink soft */
     z-index: -1;
+    animation: twinkle 3s infinite alternate;
 }
 
-body::after {
-    content: '♫';
-    position: fixed;
-    bottom: 20%;
-    right: 10%;
-    color: var(--pink-accent);
-    animation: floating 8s infinite ease-in-out reverse;
-    opacity: 0.3;
-    z-index: -1;
+/* --- 4. Animasi --- */
+@keyframes float-music {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+    50% { transform: translateY(-20px) rotate(20deg); opacity: 0.8; }
+    100% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
 }
 
-@keyframes floating {
-    0%, 100% { transform: translateY(0) rotate(0); }
-    50% { transform: translateY(-20px) rotate(10deg); }
+@keyframes twinkle {
+    from { opacity: 0.4; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.3); }
 }
 
-/* --- 8. Footer --- */
-footer {
-    text-align: center;
-    padding: 40px;
-    background: var(--pink-pastel);
-    color: var(--text-color);
-    font-size: 0.9rem;
-    border-radius: 50% 50% 0 0 / 20% 20% 0 0; /* Lengkungan halus */
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    .hero { flex-direction: column; text-align: center; padding-top: 50px; }
-    .hero-logo img { width: 200px; margin-top: 30px; }
-    nav ul { display: none; } /* Sembunyikan menu di HP agar rapi */
+/* --- 5. Detail Kecil pada Judul --- */
+h2::after {
+    content: ' 🌷'; /* Tulip kecil di setiap judul section */
+    font-size: 1.2rem;
+    opacity: 0.5;
 }
