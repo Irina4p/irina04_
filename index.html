@@ -1,248 +1,92 @@
-/* --- 1. RESET & DASAR --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Niken Triwulandari</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-html {
-    scroll-behavior: smooth;
-}
+    <header>
+        <nav>
+            <div class="logo">My<span>Porto</span></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#proyek">Proyek</a></li>
+                <li><a href="#medsos">Medsos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-body {
-    background-color: #fff;
-    color: #444;
-    overflow-x: hidden;
-}
+    <section id="home" class="hero">
+        <div class="hiasan tulip-1">🌷</div>
+        <div class="hiasan tulip-2">🌷</div>
+        <div class="hiasan melodi-1">♫</div>
+        <div class="hiasan melodi-2">♪</div>
+        
+        <div class="hero-content">
+            <p>Hi, Welcome to My Website</p>
+            <h1>Niken Triwulandari</h1>
+            <p>Website ini merupakan portofolio digital yang berisi deskripsi singkat, perjalanan belajar, dan karya-karya saya.</p>
+            <a href="#about" class="btn-hero">Kenali Saya Lebih Dalam</a>
+        </div>
 
-/* --- 2. NAVIGASI --- */
-header {
-    background: #fff;
-    padding: 15px 10%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(255, 177, 193, 0.2);
-}
+        <div class="hero-logo">
+            <img src="niken.jpeg" alt="Foto Niken">
+        </div>
+    </section>
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    <section id="about" class="container about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>
+                Nama saya <strong>Niken Triwulandari</strong> dari <strong>Surabaya</strong>, siswi <strong>SMA IPIEMS SURABAYA</strong>. 
+                Di sekolah, saya senang belajar hal baru melalui organisasi dan praktik untuk melatih komunikasi.
+            </p>
+            <p>
+                Meskipun saya sedang belajar IT di sekolah seperti <strong>Coding, Website, Arduino, dan Excel</strong> untuk menambah ilmu, 
+                cita-cita saya adalah terjun ke dunia kesehatan di masa depan untuk berkontribusi bagi masyarakat.
+            </p>
+            <p>
+                Di luar urusan sekolah, hobi saya adalah <strong>membaca buku, membuat vlog, memasak, mewarnai, menyanyi, dan dance</strong>. 
+                Selamat datang di portofolio sederhana saya!
+            </p>
+        </div>
+    </section>
 
-.logo {
-    font-size: 22px;
-    font-weight: 600;
-}
+    <section id="proyek" class="container proyek">
+        <h2>Proyek Saya</h2>
+        <div class="proyek-grid">
+            <div class="proyek-card">
+                <img src="img/project.png" alt="Excel">
+                <h3>Excel</h3>
+            </div>
+            <div class="proyek-card">
+                <img src="img/project.png" alt="Arduino">
+                <h3>Arduino</h3>
+            </div>
+            <div class="proyek-card">
+                <img src="img/project.png" alt="Website">
+                <h3>Website</h3>
+            </div>
+        </div>
+    </section>
 
-.logo span {
-    color: #ffb1c1; /* Warna Pink Tulip */
-}
+    <section id="medsos" class="container medsos">
+        <h2>Media Sosial</h2>
+        <div class="medsos-list">
+            <a href="https://instagram.com/fghirinaa_" target="_blank">Instagram</a>
+            <a href="https://tiktok.com/@sukamiayyam" target="_blank">TikTok</a>
+            <a href="https://github.com/Irina4p/irina04_" target="_blank">GitHub</a>
+        </div>
+    </section>
 
-.nav-links {
-    display: flex;
-    list-style: none;
-}
+    <footer>
+        <p>&copy; 2026 Niken Triwulandari. Made with 🌷</p>
+    </footer>
 
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: #333;
-    transition: 0.3s;
-}
-
-.nav-links li a:hover {
-    color: #ffb1c1;
-}
-
-/* --- 3. HERO SECTION --- */
-.hero {
-    height: 100vh;
-    background: linear-gradient(135deg, #ffffff 0%, #fff0f3 100%);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10%;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-content {
-    max-width: 500px;
-    z-index: 10;
-}
-
-.hero-content h1 {
-    font-size: 3.2rem;
-    line-height: 1.2;
-    margin-bottom: 15px;
-}
-
-.btn-hero {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: #ffb1c1;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(255, 177, 193, 0.4);
-    transition: 0.3s;
-}
-
-.btn-hero:hover {
-    background: #ff99ae;
-    transform: translateY(-3px);
-}
-
-/* FOTO PROFIL */
-.hero-logo img {
-    width: 320px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 8px solid #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* --- 4. HIASAN MELAYANG --- */
-.hiasan {
-    position: absolute;
-    font-size: 40px;
-    z-index: 1;
-    animation: float 4s infinite ease-in-out;
-}
-
-.tulip-1 { top: 15%; left: 5%; }
-.tulip-2 { bottom: 15%; right: 5%; animation-delay: 2s; }
-.melodi-1 { top: 10%; right: 15%; font-size: 30px; color: #ffb1c1; opacity: 0.6; }
-.melodi-2 { bottom: 10%; left: 15%; font-size: 30px; color: #ffb1c1; opacity: 0.6; }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(10deg); }
-}
-
-/* --- 5. SECTION UMUM --- */
-.container {
-    padding: 100px 10%;
-}
-
-.about {
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-.about-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.about-content strong {
-    color: #ffb1c1;
-}
-
-/* --- 6. PROYEK --- */
-.proyek {
-    background-color: #fafafa;
-    text-align: center;
-}
-
-.proyek-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.proyek-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 20px;
-    border: 1px solid #eee;
-    transition: 0.3s;
-}
-
-.proyek-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 177, 193, 0.1);
-}
-
-.proyek-card img {
-    width: 100%;
-    border-radius: 15px;
-    margin-bottom: 15px;
-}
-
-/* --- 7. MEDSOS --- */
-.medsos {
-    text-align: center;
-}
-
-.medsos-list {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.medsos-list a {
-    text-decoration: none;
-    padding: 10px 25px;
-    border: 2px solid #ffb1c1;
-    color: #ffb1c1;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.medsos-list a:hover {
-    background: #ffb1c1;
-    color: #fff;
-}
-
-/* --- 8. FOOTER --- */
-footer {
-    padding: 40px;
-    background: #333;
-    color: white;
-    text-align: center;
-}
-
-/* --- 9. RESPONSIVE (UNTUK HP) --- */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-top: 120px;
-        height: auto;
-        padding-bottom: 60px;
-    }
-    .hero-logo img {
-        width: 250px;
-        height: 250px;
-        margin-bottom: 20px;
-    }
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    .nav-links {
-        display: none; /* Menyederhanakan tampilan HP */
-    }
-}
+</body>
+</html>
