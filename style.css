@@ -1,4 +1,4 @@
-/* --- 1. RESET --- */
+/* --- 1. RESET & DASAR --- */
 * {
     margin: 0;
     padding: 0;
@@ -11,111 +11,216 @@ html {
 }
 
 body {
+    background-color: #fff;
+    color: #333;
     overflow-x: hidden;
-    background-color: white;
 }
 
-/* --- 2. HERO (HOME) - INI PAGAR UTAMANYA --- */
-.hero {
-    position: relative !important; /* GEMBOK 1: Biar hiasan gak keluar dari Home */
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 10%;
-    background: linear-gradient(to bottom, #ffffff, #ffe5ec);
-    overflow: hidden; /* GEMBOK 2: Potong hiasan kalau mau nyebrang ke About */
-    z-index: 1;
-}
-
-/* --- 3. HIASAN KHUSUS HOME (ANTI LARI) --- */
-.hiasan-niken {
-    position: absolute !important; /* GEMBOK 3: Pakai absolute, BUKAN fixed */
-    z-index: -1; /* Taruh di belakang teks biar gak ganggu klik */
-    pointer-events: none;
-    font-size: 80px !important;
-}
-
-/* Atur posisi tulip & melodi DI DALAM HOME */
-.tulip-1 { top: 15%; left: 5%; animation: goyang 4s infinite ease-in-out; }
-.tulip-2 { bottom: 15%; right: 5%; animation: goyang 4s infinite ease-in-out reverse; }
-
-.melodi-1 { top: 40%; left: 2%; color: #ffb1c1; font-size: 50px !important; }
-.melodi-2 { top: 20%; right: 10%; color: #ffb1c1; font-size: 50px !important; }
-
-/* Bintang Kelap-kelip */
-.star-glow {
-    position: absolute !important;
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 15px 5px #ffb1c1;
-    z-index: -1;
-    animation: kedip 2s infinite alternate;
-}
-
-/* --- 4. SECTION LAIN (DIBIKIN LAPISAN BIAR NUTUPIN) --- */
-section:not(.hero) {
-    position: relative;
-    z-index: 10; /* Lapisan lebih tinggi dari hiasan home */
-    background-color: white; /* Warna solid biar hiasan home ketutupan pas scroll */
-}
-
-.container {
-    padding: 80px 10%;
-}
-
-/* --- 5. ANIMASI --- */
-@keyframes goyang {
-    0%, 100% { transform: translateY(0) rotate(-10deg); }
-    50% { transform: translateY(-25px) rotate(10deg); }
-}
-
-@keyframes kedip {
-    from { opacity: 0.3; }
-    to { opacity: 1; }
-}
-
-/* --- 6. SISANYA (HEADER, CARD, DLL) --- */
+/* --- 2. NAVIGASI --- */
 header {
-    background: white;
+    background: #fff;
     padding: 20px 10%;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-nav, nav ul { display: flex; list-style: none; align-items: center; }
-nav ul li { margin-left: 20px; }
-.logo { font-weight: bold; color: #ffb1c1; font-size: 1.5rem; }
-.logo span { color: #5d4037; }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.logo span {
+    color: #ffb1c1; /* Warna pink tulip */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffb1c1;
+}
+
+/* --- 3. HERO SECTION (HOME) --- */
+.hero {
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffffff, #ffe5ec);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    position: relative !important; /* Pagar hiasan */
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 10;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+.btn-hero {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: #ffb1c1;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 177, 193, 0.4);
+}
+
+.btn-hero:hover {
+    transform: scale(1.05);
+    background: #ff99ae;
+}
+
+/* --- 4. FOTO NIKEN (HERO LOGO) --- */
+.hero-logo img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover; /* Biar foto nggak gepeng */
+    border-radius: 50%; /* Bikin bulat sempurna */
+    border: 8px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 10;
+    position: relative;
+}
+
+/* --- 5. HIASAN TULIP & BINTANG --- */
+.hiasan-niken {
+    position: absolute !important;
+    font-size: 60px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.tulip-1 { top: 20%; left: 5%; animation: float 4s infinite ease-in-out; }
+.tulip-2 { bottom: 20%; right: 5%; animation: float 4s infinite ease-in-out reverse; }
+.melodi-1 { top: 45%; left: 2%; font-size: 40px; color: #ffb1c1; opacity: 0.6; }
+.melodi-2 { top: 15%; right: 15%; font-size: 40px; color: #ffb1c1; opacity: 0.6; }
+
+.star-glow {
+    position: absolute !important;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 5px #fff;
+    animation: twinkle 2s infinite alternate;
+}
+
+/* --- 6. ABOUT SECTION --- */
+.container {
+    padding: 100px 10%;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* --- 7. PROYEK GRID --- */
+.bg-light { background-color: #fcfcfc; }
 
 .proyek-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
 .proyek-card {
     background: #fff;
-    border-radius: 15px;
-    border: 1px solid #ffe5ec;
+    border-radius: 20px;
     overflow: hidden;
-    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.proyek-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.proyek-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.proyek-info { padding: 20px; text-align: center; }
+
+/* --- 8. MEDSOS --- */
+.medsos-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.medsos-item {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: 0.3s;
 }
 
-.proyek-card:hover { transform: translateY(-10px); }
-.proyek-card img { width: 100%; height: 150px; object-fit: cover; }
-.proyek-info { padding: 15px; }
+.medsos-item img {
+    width: 50px;
+    margin-bottom: 10px;
+}
 
+.medsos-item:hover { transform: scale(1.1); color: #ffb1c1; }
+
+/* --- 9. ANIMASI --- */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+/* --- 10. FOOTER --- */
 footer {
-    background: #ffe5ec;
+    background: #333;
+    color: white;
     text-align: center;
     padding: 30px;
 }
