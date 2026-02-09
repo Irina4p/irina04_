@@ -1,4 +1,4 @@
-/* Reset & Font */
+/* Reset & Dasar */
 * {
     margin: 0;
     padding: 0;
@@ -8,20 +8,21 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: #5d4037;
-    background-color: #fff5f7; /* Pink sangat muda */
-    line-height: 1.6;
+    background-color: #fff5f7; /* Warna background pink susu */
+    color: #5d4037; /* Warna teks cokelat gelap supaya senada dengan karakter Sanrio */
+    overflow-x: hidden;
 }
 
 /* Navigasi */
 header {
-    background: #ff8fa3;
-    padding: 1rem 10%;
+    background-color: rgba(255, 182, 193, 0.9); /* Pink transparan */
+    backdrop-filter: blur(10px);
+    padding: 15px 10%;
     position: fixed;
-    width: 100%;
     top: 0;
+    width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
 }
 
 nav {
@@ -33,7 +34,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: 600;
-    color: white;
+    color: #fff;
 }
 
 .logo span {
@@ -41,8 +42,8 @@ nav {
 }
 
 nav ul {
-    display: flex;
     list-style: none;
+    display: flex;
 }
 
 nav ul li {
@@ -51,7 +52,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #fff;
     font-weight: 400;
     transition: 0.3s;
 }
@@ -69,154 +70,157 @@ nav ul li a:hover {
     padding: 0 10%;
     background: linear-gradient(135deg, #ffccd5 0%, #fff0f3 100%);
     position: relative;
-    overflow: hidden;
-}
-
-/* Dekorasi My Melody & Tulip */
-.hiasan {
-    position: absolute;
-    font-size: 2rem;
-    opacity: 0.6;
-    animation: melayang 4s ease-in-out infinite;
-    z-index: 1;
-}
-
-.tulip-1 { top: 20%; left: 5%; animation-delay: 0s; }
-.tulip-2 { bottom: 15%; right: 10%; animation-delay: 1s; }
-.melodi-1 { top: 15%; right: 15%; animation-delay: 0.5s; font-size: 3rem; color: #ff4d6d; }
-.melodi-2 { bottom: 20%; left: 15%; animation-delay: 1.5s; font-size: 2.5rem; color: #ff8fa3; }
-
-@keyframes melayang {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(10deg); }
 }
 
 .hero-content {
-    max-width: 500px;
+    max-width: 600px;
     z-index: 2;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #ff4d6d;
-    margin-bottom: 10px;
+    margin: 10px 0;
+    text-shadow: 2px 2px 0px white;
 }
 
 .btn-hero {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 12px 30px;
     background: #ff4d6d;
     color: white;
     text-decoration: none;
     border-radius: 50px;
     margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
     transition: 0.3s;
-    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
 }
 
 .btn-hero:hover {
-    background: #ff758f;
     transform: scale(1.05);
+    background: #ff758f;
 }
 
 .hero-logo img {
     width: 300px;
     height: 300px;
-    object-fit: cover;
     border-radius: 50%;
-    border: 8px solid white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 10px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    object-fit: cover;
     z-index: 2;
 }
 
-/* About Section */
+/* Hiasan Melody & Tulip */
+.hiasan {
+    position: absolute;
+    font-size: 2.5rem;
+    z-index: 1;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.tulip-1 { top: 20%; left: 5%; }
+.tulip-2 { bottom: 20%; right: 5%; animation-delay: 1s; }
+.melodi-1 { top: 15%; right: 15%; animation-delay: 0.5s; }
+.melodi-2 { bottom: 15%; left: 15%; animation-delay: 1.5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Main Container */
 .container {
     padding: 100px 10%;
-    text-align: center;
-}
-
-.about-content {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255, 143, 163, 0.1);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.about-content p {
-    margin-bottom: 15px;
-    color: #7d5a50;
 }
 
 h2 {
-    font-size: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
     color: #ff4d6d;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     position: relative;
 }
 
 h2::after {
-    content: '🐰'; /* Ikon kelinci untuk kesan My Melody */
+    content: '🌸';
     display: block;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-top: 5px;
 }
 
-/* Proyek Grid */
+/* About Section */
+.about-content {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 30px;
+    border: 2px solid #ffccd5;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Proyek Section */
 .bg-light { background-color: #fffafb; }
 
 .proyek-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .proyek-card {
     background: white;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
-    transition: 0.3s;
-    border: 1px solid #ffe5ec;
+    transition: 0.4s;
+    border: 2px solid transparent;
 }
 
 .proyek-card:hover {
+    border-color: #ff8fa3;
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(255, 77, 109, 0.15);
+    box-shadow: 0 15px 35px rgba(255, 77, 109, 0.2);
 }
 
 .proyek-card img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
-    background-color: #ffccd5; /* Placeholder jika gambar kosong */
 }
 
 .proyek-info {
     padding: 20px;
+    text-align: center;
 }
 
 .proyek-info h3 {
     color: #ff4d6d;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-/* Media Sosial */
+/* Medsos Section */
 .medsos-list {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .medsos-list a {
-    padding: 10px 25px;
+    padding: 12px 25px;
     background: white;
     border: 2px solid #ff8fa3;
-    border-radius: 50px;
-    text-decoration: none;
     color: #ff8fa3;
+    text-decoration: none;
     font-weight: 600;
+    border-radius: 50px;
     transition: 0.3s;
 }
 
@@ -234,18 +238,10 @@ footer {
     font-weight: 600;
 }
 
-/* Responsive */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-top: 100px;
-    }
-    .hero-logo img {
-        width: 200px;
-        height: 200px;
-    }
-    nav ul {
-        display: none; /* Kamu bisa tambah burger menu nanti */
-    }
+    .hero { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-logo img { width: 200px; height: 200px; }
+    nav ul { display: none; }
 }
