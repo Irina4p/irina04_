@@ -1,11 +1,11 @@
-/* --- 1. SETTING DASAR (Variable Warna) --- */
+/* --- 1. SETTING DASAR & WARNA --- */
 :root {
     --pink-pastel: #FFD1DC;
     --pink-soft: #FFF0F3;
     --pink-dark: #FFB7C5;
-    --white: #ffffff;
-    --text-main: #555555;
-    --text-header: #333333;
+    --putih: #ffffff;
+    --teks-utama: #555555;
+    --teks-header: #333333;
 }
 
 * {
@@ -20,21 +20,21 @@ html {
 }
 
 body {
-    background-color: var(--white);
-    color: var(--text-main);
+    background-color: var(--putih);
+    color: var(--teks-utama);
     overflow-x: hidden;
 }
 
-/* --- 2. NAVIGASI (Sticky & Clean) --- */
+/* --- 2. NAVIGASI --- */
 header {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     border-bottom: 2px solid var(--pink-soft);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(5px);
 }
 
 nav {
@@ -46,29 +46,29 @@ nav {
     padding: 0 20px;
 }
 
-.logo { font-size: 1.6rem; font-weight: 700; color: var(--text-header); }
+.logo { font-size: 1.6rem; font-weight: 700; color: var(--teks-header); }
 .logo span { color: var(--pink-pastel); }
 
 nav ul { display: flex; list-style: none; }
 nav ul li { margin-left: 25px; }
 nav ul li a {
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--teks-utama);
     font-weight: 500;
     transition: 0.3s;
 }
 nav ul li a:hover { color: var(--pink-pastel); }
 
-/* --- 3. HERO SECTION (Hiasan Stuck di Sini) --- */
+/* --- 3. HERO SECTION (TULIP & MELODI STUCK DI SINI) --- */
 .hero {
     height: 100vh;
-    background: linear-gradient(180deg, var(--white) 0%, var(--pink-soft) 100%);
+    background: linear-gradient(180deg, var(--putih) 0%, var(--pink-soft) 100%);
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0 10%;
-    position: relative; /* Patokan hiasan */
-    overflow: hidden;    /* Mengunci hiasan agar tidak keluar */
+    position: relative; /* Menahan hiasan di dalam section ini */
+    overflow: hidden; 
 }
 
 /* Hiasan Tulip (Kiri Atas) */
@@ -77,9 +77,11 @@ nav ul li a:hover { color: var(--pink-pastel); }
     position: absolute;
     top: 15%;
     left: 8%;
-    font-size: 4rem;
-    opacity: 0.7;
+    font-size: 5rem;
+    z-index: 50; /* Di atas elemen lain */
+    opacity: 0.8;
     animation: float 4s infinite ease-in-out;
+    pointer-events: none; /* Biar nggak ngehalangin klik */
 }
 
 /* Hiasan Melodi (Kanan Bawah) */
@@ -88,16 +90,18 @@ nav ul li a:hover { color: var(--pink-pastel); }
     position: absolute;
     bottom: 15%;
     right: 10%;
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: var(--pink-pastel);
-    opacity: 0.6;
+    z-index: 50; 
+    opacity: 0.7;
     animation: float 5s infinite ease-in-out;
     animation-delay: 1s;
+    pointer-events: none;
 }
 
-.hero-content { max-width: 550px; z-index: 2; }
+.hero-content { max-width: 550px; z-index: 10; }
 .hero-subtitle { color: var(--pink-dark); font-weight: 600; letter-spacing: 1px; }
-.hero-content h1 { font-size: 3.5rem; color: var(--text-header); margin: 10px 0; }
+.hero h1 { font-size: 3.5rem; color: var(--teks-header); margin: 10px 0; }
 
 .btn-hero {
     display: inline-block;
@@ -134,7 +138,12 @@ nav ul li a:hover { color: var(--pink-pastel); }
 
 /* --- 5. PROYEK SECTION --- */
 .bg-light { background-color: #fafafa; }
-.proyek-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+.proyek-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-top: 50px; 
+}
 
 .proyek-card {
     background: white;
@@ -145,7 +154,10 @@ nav ul li a:hover { color: var(--pink-pastel); }
     border: 1px solid var(--pink-soft);
     transition: 0.4s ease;
 }
-.proyek-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(255, 183, 197, 0.2); }
+.proyek-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 20px 40px rgba(255, 183, 197, 0.2); 
+}
 .proyek-card img { width: 100%; height: 220px; object-fit: cover; }
 .proyek-info { padding: 25px; text-align: center; }
 
@@ -172,5 +184,5 @@ footer { padding: 50px; background-color: var(--pink-soft); text-align: center; 
     .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; height: auto; padding-bottom: 50px; }
     .hero-content h1 { font-size: 2.6rem; }
     .hero-logo img { width: 250px; height: 250px; }
-    nav ul { display: none; }
+    nav ul { display: none; } /* Kamu bisa tambahkan menu hamburger nanti */
 }
